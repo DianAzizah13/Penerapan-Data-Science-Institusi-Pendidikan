@@ -9,9 +9,9 @@ import seaborn as sns
 # ----------------------------
 # LOAD MODEL & FEATURES
 # ----------------------------
-dropout_model = joblib.load('D:/Laskar AI/Code/Model/rf_dropout_model.joblib')
-graduated_model = joblib.load('D:/Laskar AI/Code/Model/rf_graduated_model.joblib')
-with open('D:/Laskar AI/Code/Model/top_features.json') as f:
+dropout_model = joblib.load('rf_dropout_model.joblib')
+graduated_model = joblib.load('rf_graduated_model.joblib')
+with open('top_features.json') as f:
     top_features = json.load(f)
 
 # Reordered manually for better UX
@@ -56,7 +56,7 @@ page = st.sidebar.selectbox("Select Page", ["Dashboard", "Manual Inputs"])
 # DASHBOARD
 # ----------------------------
 if page == "Dashboard":
-    df = pd.read_csv("D:/Laskar AI/Code/student_performance.csv")
+    df = pd.read_csv("student_performance.csv")
     df_enrolled = df[df['Status'] == 'Enrolled'].copy()
 
     X_enrolled = df_enrolled[top_features]
