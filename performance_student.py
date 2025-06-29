@@ -9,9 +9,9 @@ import seaborn as sns
 # ----------------------------
 # LOAD MODEL & FEATURES
 # ----------------------------
-dropout_model = joblib.load('model/rf_dropout_model.joblib')
-graduated_model = joblib.load('model/rf_graduated_model.joblib')
-with open('model/top_features.json') as f:
+dropout_model = joblib.load('rf_dropout_model.joblib')
+graduated_model = joblib.load('rf_graduated_model.joblib')
+with open('top_features.json') as f:
     top_features = json.load(f)
 
 # Reordered manually for better UX
